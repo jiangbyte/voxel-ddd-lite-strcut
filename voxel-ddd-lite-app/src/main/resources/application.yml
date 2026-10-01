@@ -1,0 +1,50 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: voxel-ddd-lite-strcut
+  # ---- 需要 MySQL 时取消注释，并恢复父 POM / infrastructure 中 Druid、MyBatis-Plus 依赖 ----
+  # datasource:
+  #   url: jdbc:mysql://127.0.0.1:3306/voxel?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai
+  #   username: root
+  #   password: infra123!
+  #   driver-class-name: com.mysql.cj.jdbc.Driver
+  # ---- 需要 Redis 时取消注释，并恢复 spring-boot-starter-data-redis ----
+  # data:
+  #   redis:
+  #     host: 127.0.0.1
+  #     port: 6379
+  #     password: infra123!
+
+# ---- 需要 JWT 时取消注释相关依赖与 trigger.security 实现 ----
+# jwt:
+#   secret: change-me-to-a-long-secret-at-least-32-bytes
+#   expire-seconds: 7200
+
+# ---- 需要 S3 兼容存储时取消注释依赖与 infrastructure.config.s3 ----
+# s3:
+#   endpoint: http://127.0.0.1:9000
+#   region: us-east-1
+#   access-key: admin
+#   secret-key: infra123!
+#   bucket: voxel
+
+# ---- 需要 Milvus 时取消注释依赖与 infrastructure.config.milvus ----
+# milvus:
+#   uri: http://127.0.0.1:19530
+#   username: root
+#   password: infra123!
+
+# ---- 需要 Spring AI 时取消注释 spring-ai 依赖与配置 ----
+# spring:
+#   ai:
+#     openai:
+#       api-key: ${OPENAI_API_KEY:}
+#       base-url: ${OPENAI_BASE_URL:https://api.openai.com}
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
